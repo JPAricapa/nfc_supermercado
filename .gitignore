@@ -1,0 +1,10 @@
+# Entorno virtual
+venv_nfc/
+
+# Archivos del sistema
+*.pyc
+__pycache__/
+
+# Archivos de configuración específicos del entorno
+.DS_Store
+.vscode/

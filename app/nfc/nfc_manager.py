@@ -1,13 +1,11 @@
-# nfc_manager.py
+import nfc
+
 class NFCManager:
     def __init__(self):
-        # Inicializar NFC Manager
-        pass
+        self.clf = nfc.ContactlessFrontend('usb')  # Cambiar 'usb' por la interfaz apropiada
 
-    def read_nfc(self):
-        # Lógica para leer etiquetas NFC
-        pass
-
-    def write_nfc(self, data):
-        # Lógica para escribir en etiquetas NFC
-        pass
+    def read_nfc_tag(self, on_connect_callback):
+        try:
+            self.clf.connect(rdwr={'on-connect': on_connect_callback})
+        except Exception as e:
+            print("Error al leer la etiqueta NFC:", e)

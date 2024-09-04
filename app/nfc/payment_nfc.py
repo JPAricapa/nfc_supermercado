@@ -1,4 +1,3 @@
-# payment_nfc.py
 from .nfc_manager import NFCManager
 
 class PaymentNFC:
@@ -7,4 +6,4 @@ class PaymentNFC:
 
     def process_payment(self):
         # Lógica para procesar el pago mediante NFC
-        pass
+        print("Procesando pago con NFC...")

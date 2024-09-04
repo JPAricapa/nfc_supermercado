@@ -1,0 +1,48 @@
+#:kivy 2.3.0
+<MainMenu>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Escanear Producto'
+            on_release: app.root.current = 'scan_product'
+        Button:
+            text: 'Buscar Producto'
+            on_release: app.root.current = 'search_product'
+        Button:
+            text: 'Carrito de Compras'
+            on_release: app.root.current = 'cart'
+
+<ScanProductScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Escanea el tag NFC de un producto'
+        Button:
+            text: 'Volver'
+            on_release: app.root.current = 'main_menu'
+
+<SearchProductScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: search_input
+            hint_text: 'Buscar producto...'
+        Button:
+            text: 'Buscar'
+            on_release: app.root.current = 'search_product'  # Cambio aquí si hay un error.
+        Button:
+            text: 'Volver'
+            on_release: app.root.current = 'main_menu'
+
+<CartScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: cart_label
+            text: 'Carrito de Compras'
+        Button:
+            text: 'Pagar'
+            on_release: app.root.current = 'main_menu'  # Cambio aquí si hay un error.
+        Button:
+            text: 'Volver'
+            on_release: app.root.current = 'main_menu'
